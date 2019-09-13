@@ -1,0 +1,20 @@
+[
+    {
+        "tax": {
+            "productId": 1,
+            "salestax": 30
+        }
+    },
+    {
+        "tax": {
+            "productId": 2,
+            "salestax": 20
+        }
+    },
+    {
+        "tax": {
+            "productId": 3,
+            "salestax": 0
+        }
+    }
+]

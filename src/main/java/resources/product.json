@@ -1,0 +1,26 @@
+[
+    {
+        "product": {
+            "productId": 1,
+            "productName": "ProductA",
+            "productPrice": 200.00,
+            "productQuantity": 1
+        }
+    },
+    {
+        "product": {
+             "productId": 2,
+             "productName": "ProductB",
+             "productPrice": 200.00,
+             "productQuantity": 1
+        }
+    },
+    {
+        "product": {
+             "productId": 3,
+             "productName": "ProductC",
+             "productPrice": 100.00,
+             "productQuantity": 2
+        }
+    }
+]
