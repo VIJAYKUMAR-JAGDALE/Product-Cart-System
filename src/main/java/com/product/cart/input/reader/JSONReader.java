@@ -20,17 +20,17 @@ import com.product.cart.model.Product;import com.product.cart.model.TaxDetails;
 
 
 public class JSONReader {
-	URL productResource;
-	URL taxDetailsresource;
+	private URL productResource;
+	private URL taxDetailsresource;
 	List<Product> productList = new ArrayList<Product>();
 	List<TaxDetails> taxDetailsList = new ArrayList<TaxDetails>();
 	public JSONReader(){
-		ClassLoader classLoader = getClass().getClassLoader();
-		 productResource = classLoader.getResource("product.json");
-		 taxDetailsresource = classLoader.getResource("tax.json");
+		 ClassLoader classLoader = getClass().getClassLoader();
+		 setProductResource(classLoader.getResource("product.json"));
+		 setTaxDetailsresource(classLoader.getResource("tax.json"));
 	}
 	public List<Product> getProductDetailsFromJSON() {
-		return getProductList(productResource);
+		return getProductList(getProductResource());
 	}
 
 	@SuppressWarnings("unchecked")
@@ -98,4 +98,17 @@ public class JSONReader {
 		}
 		return taxDetailsList;
 	}
+	public URL getProductResource() {
+		return productResource;
+	}
+	public void setProductResource(URL productResource) {
+		this.productResource = productResource;
+	}
+	public URL getTaxDetailsresource() {
+		return taxDetailsresource;
+	}
+	public void setTaxDetailsresource(URL taxDetailsresource) {
+		this.taxDetailsresource = taxDetailsresource;
+	}
+	
 }

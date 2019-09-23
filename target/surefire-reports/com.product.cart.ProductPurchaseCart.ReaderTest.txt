@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.product.cart.ProductPurchaseCart.ReaderTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in com.product.cart.ProductPurchaseCart.ReaderTest
+test(com.product.cart.ProductPurchaseCart.ReaderTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: Not yet implemented
+	at com.product.cart.ProductPurchaseCart.ReaderTest.test(ReaderTest.java:11)
+

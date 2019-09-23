@@ -10,23 +10,16 @@ public class CartBillGenerator extends TaxCalculator{
 
 	private List<Product> productList=new ArrayList<Product>();
 	
-	/**
-	 * constructor to read products from json file and create list 
-	 * of products  
-	 */
-	public CartBillGenerator(){
-		   JSONReader reader=new JSONReader();
-	       reader.getProductDetailsFromJSON().forEach(product->{
-	    	   productList.add(setAmountValues(product));
-	    	   
-	       }); 
-	}
+	private JSONReader reader;
 
 	/**
 	 * @author Vijaykumar Jagdale
 	 * method to generate bill depending on products list
 	 */
 	public void generateBill() {
+		setReader(reader);
+		setReaderValues(getReader());
+		
 		System.out
 				.println("| Product Name | Product Price | Product Quantity | Product Cost | Sales Tax Paid | Payable Amount |");
 		System.out
@@ -83,5 +76,24 @@ public class CartBillGenerator extends TaxCalculator{
 		product.setPayableAmt(product.getProductCost()+product.getTaxableAmt());
 		
 		return product;
+	}
+	
+	private void setReaderValues(JSONReader reader){
+		getReader().getProductDetailsFromJSON().forEach(product->{
+	    	   productList.add(setAmountValues(product));
+	    	   
+	       }); 
+	}
+
+	public JSONReader getReader() {
+		return reader;
+	}
+
+	public void setReader(JSONReader reader) {
+		if (null != reader) {
+			this.reader = reader;
+		} else {
+			this.reader=new JSONReader();
+		}
 	}
 }
